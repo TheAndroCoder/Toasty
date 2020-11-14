@@ -6,4 +6,32 @@
 ### Info Alert
 <img src="info.png"/><br>
 ### Error Alert
-<img src="error.png"/>
+<img src="error.png"/><br>
+
+## Importing the Library
+```html
+<script src=""></script>
+```
+## Using the Library
+```javascript
+//create a new Toast object
+let toast=new Toast({
+                message:'Download Successful',
+                type:'success',
+                duration:30000,
+                animate:true
+            });
+//for customizing the toast, this function is not mandatory
+toast.customize({
+                bgcolor:'red',
+                textColor:'white',
+                borderRadius:'10px',
+                position:'fixed',
+                bottom:'20px',
+                left:'20px'
+            });
+// finally display the toast on browser window
+toast.show(()=>{
+      // This Function will run after the toast has completed showing
+});
+```
