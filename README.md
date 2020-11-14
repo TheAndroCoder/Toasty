@@ -10,7 +10,7 @@
 
 ## Importing the Library
 ```html
-<script src=""></script>
+<script src="https://cdn.jsdeliver.net/gh/TheAndroCoder/Toasty/Toast.js"></script>
 ```
 ## Using the Library
 ```javascript
