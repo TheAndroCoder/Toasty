@@ -7,7 +7,6 @@
  */
 class Toast{
     constructor(data){
-        if('message' in data)this.message=data.message;
         if('type' in data){
             if(data.type=='error' || data.type=='info' || data.type=='success')this.type=data.type;
             else throw "Not a valid Toast type";
@@ -24,10 +23,16 @@ class Toast{
             this.animate=data.animate
         else    
             this.animate=true;
+        this.textColor='white';
+        this.borderRadius='10px';
+        this.position='fixed'
+        this.bottom='20px'
+        this.left='20px'
     }
-    show(after){
+    show(message,after){
+        this.message=message;
         console.log('Toast Displayed',this.message);
-        document.getElementsByTagName('body')[0].innerHTML = this.toast()
+        document.getElementsByTagName('body')[0].innerHTML+=this.toast();
         this.animateOpen();
         this.timeout = setTimeout(()=>{
             document.getElementById('Toast').style.display='none';
